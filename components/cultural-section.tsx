@@ -6,22 +6,22 @@ export default function CulturalSection() {
   const culturalEvents = [
     {
       name: "Annual Cultural Festival",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/c1.jpg?height=400&width=600",
       description: "A week-long celebration of art, music, dance, and theater",
     },
     {
       name: "Inter-University Dance Competition",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/c2.jpeg?height=400&width=600",
       description: "Showcasing diverse dance forms from across the country",
     },
     {
       name: "Music Concert Series",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/c3.jpeg?height=400&width=600",
       description: "Featuring student bands and professional musicians",
     },
     {
       name: "Theater Productions",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/c4.jpg?height=400&width=600",
       description: "Original plays and classic performances by our drama club",
     },
   ]
@@ -55,7 +55,7 @@ export default function CulturalSection() {
               {culturalEvents.slice(0, 2).map((event, index) => (
                 <div key={index} className="flex flex-col sm:flex-row gap-4">
                   <Image
-                    src={event.image || "/placeholder.svg"}
+                    src={event.image || "/images/c1.jpg"}
                     alt={event.name}
                     width={200}
                     height={150}
@@ -74,7 +74,7 @@ export default function CulturalSection() {
             {culturalEvents.slice(2, 4).map((event, index) => (
               <div key={index} className="flex flex-col sm:flex-row gap-4">
                 <Image
-                  src={event.image || "/placeholder.svg"}
+                  src={event.image || "/images/c1.jpg"}
                   alt={event.name}
                   width={200}
                   height={150}

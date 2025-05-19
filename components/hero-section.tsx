@@ -1,5 +1,6 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -18,18 +19,26 @@ export default function HeroSection() {
       {/* Content */}
       <div className="container mx-auto relative z-10 text-white px-4">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Empowering Future Leaders</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            Empowering Future Leaders
+          </h1>
           <p className="text-xl md:text-2xl mb-8 text-slate-100">
-            Discover a world-class education that prepares you for success in a global society
+            Discover a world-class education that prepares you for success in a
+            global society
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
-              Apply Now
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white text-slate-900 hover:bg-slate-100"
+            >
+              <Link href="/programs">Explore Programs</Link>
             </Button>
-            <Button size="lg" variant="outline" className="bg-white text-slate-900 hover:bg-slate-100">
-              Explore Programs
-            </Button>
-            <Button size="lg" variant="outline" className="bg-white text-slate-900 hover:bg-slate-100">
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white text-slate-900 hover:bg-slate-100"
+            >
               Virtual Tour
             </Button>
           </div>
@@ -56,5 +65,5 @@ export default function HeroSection() {
         </svg>
       </div>
     </section>
-  )
+  );
 }

@@ -4,12 +4,12 @@ import { Trophy } from "lucide-react"
 
 export default function SportsSection() {
   const sportsFacilities = [
-    { name: "Olympic-sized Swimming Pool", image: "/placeholder.svg?height=300&width=400" },
-    { name: "Indoor Sports Complex", image: "/placeholder.svg?height=300&width=400" },
-    { name: "Football Stadium", image: "/placeholder.svg?height=300&width=400" },
-    { name: "Cricket Ground", image: "/placeholder.svg?height=300&width=400" },
-    { name: "Tennis Courts", image: "/placeholder.svg?height=300&width=400" },
-    { name: "Basketball Courts", image: "/placeholder.svg?height=300&width=400" },
+    { name: "Olympic-sized Swimming Pool", image: "/images/download (3).jpeg?height=300&width=400" },
+    { name: "Indoor Sports Complex", image: "/images/images (2).jpeg?height=300&width=400" },
+    { name: "Football Stadium", image: "/images/download (5).jpeg?height=300&width=400" },
+    { name: "Cricket Ground", image: "/images/cric.jpg?height=300&width=400" },
+    { name: "Tennis Courts", image: "/images/ten.jpeg?height=300&width=400" },
+    { name: "Basketball Courts", image: "/images/basket.jpeg?height=300&width=400" },
   ]
 
   const sportsAchievements = [
@@ -33,7 +33,7 @@ export default function SportsSection() {
           {sportsFacilities.map((facility, index) => (
             <Card key={index} className="overflow-hidden">
               <div className="aspect-video relative">
-                <Image src={facility.image || "/placeholder.svg"} alt={facility.name} fill className="object-cover" />
+                <Image src={facility.image || "/images/download (3).jpeg"} alt={facility.name} fill className="object-cover" />
               </div>
               <CardContent className="p-4">
                 <h3 className="font-medium">{facility.name}</h3>
