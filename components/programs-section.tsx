@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ArrowRight } from "lucide-react";
 
 export default function ProgramsSection() {
   const programCategories = [
@@ -9,7 +15,7 @@ export default function ProgramsSection() {
     { id: "postgraduate", label: "Postgraduate" },
     { id: "phd", label: "PhD Programs" },
     { id: "diploma", label: "Diploma Courses" },
-  ]
+  ];
 
   const programs = {
     undergraduate: [
@@ -23,7 +29,11 @@ export default function ProgramsSection() {
         duration: "3 years",
         departments: ["Finance", "Marketing", "HR"],
       },
-      { title: "Bachelor of Science", duration: "3 years", departments: ["Physics", "Chemistry", "Mathematics"] },
+      {
+        title: "Bachelor of Science",
+        duration: "3 years",
+        departments: ["Physics", "Chemistry", "Mathematics"],
+      },
       {
         title: "Bachelor of Arts",
         duration: "3 years",
@@ -31,14 +41,26 @@ export default function ProgramsSection() {
       },
     ],
     postgraduate: [
-      { title: "Master of Technology", duration: "2 years", departments: ["AI & ML", "Data Science", "IoT"] },
+      {
+        title: "Master of Technology",
+        duration: "2 years",
+        departments: ["AI & ML", "Data Science", "IoT"],
+      },
       {
         title: "Master of Business Administration",
         duration: "2 years",
         departments: ["Finance", "Marketing", "Operations"],
       },
-      { title: "Master of Science", duration: "2 years", departments: ["Applied Physics", "Biotechnology"] },
-      { title: "Master of Arts", duration: "2 years", departments: ["Economics", "Public Policy"] },
+      {
+        title: "Master of Science",
+        duration: "2 years",
+        departments: ["Applied Physics", "Biotechnology"],
+      },
+      {
+        title: "Master of Arts",
+        duration: "2 years",
+        departments: ["Economics", "Public Policy"],
+      },
     ],
     phd: [
       {
@@ -68,7 +90,11 @@ export default function ProgramsSection() {
         duration: "3 years",
         departments: ["Computer Science", "Electrical", "Mechanical"],
       },
-      { title: "Diploma in Business Management", duration: "1 year", departments: ["Finance", "Marketing", "HR"] },
+      {
+        title: "Diploma in Business Management",
+        duration: "1 year",
+        departments: ["Finance", "Marketing", "HR"],
+      },
       {
         title: "Certificate in Data Science",
         duration: "6 months",
@@ -80,15 +106,16 @@ export default function ProgramsSection() {
         departments: ["SEO", "Social Media", "Content Marketing"],
       },
     ],
-  }
+  };
 
   return (
-    <section id="programs" className="py-16">
+    <section id="programs" className="pt-50 pb-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Academic Programs</h2>
           <p className="text-slate-600 max-w-3xl mx-auto">
-            Explore our diverse range of programs designed to prepare you for success in your chosen field
+            Explore our diverse range of programs designed to prepare you for
+            success in your chosen field
           </p>
         </div>
 
@@ -110,8 +137,12 @@ export default function ProgramsSection() {
                       <CardTitle>{program.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-500 mb-2">Duration: {program.duration}</p>
-                      <p className="text-sm font-medium mb-1">Specializations:</p>
+                      <p className="text-sm text-slate-500 mb-2">
+                        Duration: {program.duration}
+                      </p>
+                      <p className="text-sm font-medium mb-1">
+                        Specializations:
+                      </p>
                       <ul className="text-sm text-slate-600 space-y-1">
                         {program.departments.map((dept, i) => (
                           <li key={i}>• {dept}</li>
@@ -119,7 +150,10 @@ export default function ProgramsSection() {
                       </ul>
                     </CardContent>
                     <CardFooter>
-                      <Button variant="ghost" className="w-full justify-between">
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-between"
+                      >
                         View Details <ArrowRight className="h-4 w-4" />
                       </Button>
                     </CardFooter>
@@ -128,12 +162,18 @@ export default function ProgramsSection() {
               </div>
 
               <div className="mt-8 text-center">
-                <Button>View All {programCategories.find((c) => c.id === category)?.label} Programs</Button>
+                <Button asChild>
+                  <a href={`/programs/${category}`}>
+                    View All{" "}
+                    {programCategories.find((c) => c.id === category)?.label}{" "}
+                    Programs
+                  </a>
+                </Button>
               </div>
             </TabsContent>
           ))}
         </Tabs>
       </div>
     </section>
-  )
+  );
 }

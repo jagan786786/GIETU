@@ -3,31 +3,26 @@ import { Button } from "@/components/ui/button";
 
 export default function ProgramsPage() {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-50 to-white py-20 px-4">
+    <section className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-36 pb-20 px-4">
       <div className="container mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-12">
           Academic Programs & Departments
         </h1>
 
-        {/* General Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {[
+        {/* General Info Cards */}
+        <GridSection
+          title="Explore"
+          items={[
             "Schools",
             "Authorities",
             "Innovations",
             "Academic Integrity Committee (AIC)",
             "IQAC",
-          ].map((item) => (
-            <Card key={item} className="bg-white shadow-md rounded-2xl">
-              <CardContent className="p-6 text-center font-medium text-slate-800">
-                {item}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          ]}
+        />
 
-        {/* Undergraduate Programs */}
-        <Section
+        {/* UG Programs */}
+        <GridSection
           title="Undergraduate Programs"
           items={[
             "B. Tech in Computer Science & Engineering",
@@ -43,8 +38,8 @@ export default function ProgramsPage() {
             "B. Tech in Electrical Engineering",
             "B. Tech in Electrical and Electronics Engineering",
             "B. Tech in Electronics and Communication Engineering",
-            "B. Tech. in Electronics Engineering (VLSI Design and Technology)",
-            "B. Tech. in Electronics & Communication (Advanced Communication Technology)",
+            "B. Tech in Electronics Engineering (VLSI Design and Technology)",
+            "B. Tech in Electronics & Communication (Advanced Communication Technology)",
             "B.Sc. (Hons.) Agriculture",
             "Bachelor of Business Administration (BBA)",
             "Bachelor of Computer Applications (BCA)",
@@ -52,8 +47,8 @@ export default function ProgramsPage() {
           ]}
         />
 
-        {/* Postgraduate Programs */}
-        <Section
+        {/* PG Programs */}
+        <GridSection
           title="Postgraduate Programs"
           items={[
             "Master of Business Administration (MBA)",
@@ -67,8 +62,8 @@ export default function ProgramsPage() {
             "M. Tech in Construction Technology & Management",
             "M. Tech in Power Electronics",
             "M. Tech in Electronics & Communication Engineering",
-            "M. Tech. in Electronics & Communication (Advanced Communication Technology)",
-            "M. Tech. in Electronics & Communication (VLSI Design)",
+            "M. Tech in Electronics & Communication (Advanced Communication Technology)",
+            "M. Tech in Electronics & Communication (VLSI Design)",
             "Master of Computer Applications (MCA)",
             "M.Sc in Physics",
             "M.Sc in Chemistry",
@@ -81,7 +76,7 @@ export default function ProgramsPage() {
         />
 
         {/* Doctoral Programs */}
-        <Section
+        <GridSection
           title="Doctoral Programs"
           items={[
             "Ph.D in Physics",
@@ -102,7 +97,7 @@ export default function ProgramsPage() {
           ]}
         />
 
-        {/* Back to home */}
+        {/* Back Button */}
         <div className="mt-16 text-center">
           <Button
             size="lg"
@@ -118,14 +113,17 @@ export default function ProgramsPage() {
   );
 }
 
-// Reusable section component
-function Section({ title, items }: { title: string; items: string[] }) {
+// Reusable grid section
+function GridSection({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="mb-16">
       <h2 className="text-3xl font-semibold text-slate-800 mb-6">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => (
-          <Card key={item} className="bg-white shadow-md rounded-xl">
+          <Card
+            key={item}
+            className="bg-white shadow-md rounded-xl hover:shadow-lg transition"
+          >
             <CardContent className="p-4 text-slate-700 font-medium">
               {item}
             </CardContent>

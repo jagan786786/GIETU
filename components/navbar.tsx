@@ -20,24 +20,24 @@ const navLinks = [
     name: "About",
     href: "#about",
     dropdown: [
-      { name: "Our History", href: "#about" },
-      { name: "Mission & Vision", href: "#about" },
-      { name: "Accreditations", href: "#about" },
+      { name: "Our History", href: "/about/history" },
+      { name: "Mission & Vision", href: "/about/vision-mission" },
+      { name: "Accreditations", href: "/about/accrediations" },
     ],
   },
   {
     name: "Academics",
     href: "#programs",
     dropdown: [
-      { name: "Undergraduate", href: "#programs" },
-      { name: "Postgraduate", href: "#programs" },
-      { name: "PhD Programs", href: "#programs" },
-      { name: "Diploma Courses", href: "#programs" },
+      { name: "Undergraduate", href: "/programs/under-graduate" },
+      { name: "Postgraduate", href: "/programs/post-graduate" },
+      { name: "PhD Programs", href: "/programs/phd-course" },
+      { name: "Diploma Courses", href: "/programs/diploma-course" },
     ],
   },
-  { name: "Admissions", href: "#admission" },
-  { name: "Campus Life", href: "#campus" },
-  { name: "Faculty", href: "#faculty" },
+  { name: "Admissions", href: "/admission" },
+  { name: "Campus Life", href: "/campus-life" },
+  { name: "Faculty", href: "/faculty" },
 ];
 
 export default function Navbar() {
@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900 text-white shadow-md py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-700 text-white shadow-md py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -191,9 +191,6 @@ export default function Navbar() {
                 ))}
               </nav>
               <div className="mt-4 px-4 pt-4 flex flex-col space-y-2 border-t border-slate-200">
-                <Button variant="outline" className="w-full justify-center">
-                  Login
-                </Button>
                 <Button
                   className="w-full justify-center"
                   onClick={() => {

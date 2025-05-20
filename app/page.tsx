@@ -90,12 +90,6 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="bg-white text-slate-900 hover:bg-slate-100"
-            >
-              Apply Now
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
               className="bg-white text-slate-900 hover:bg-slate-100"
             >
@@ -111,8 +105,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

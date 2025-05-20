@@ -27,7 +27,7 @@ export default function Footer() {
                 { icon: <Facebook className="h-5 w-5" />, href: "#" },
                 { icon: <Twitter className="h-5 w-5" />, href: "#" },
                 { icon: <Instagram className="h-5 w-5" />, href: "#" },
-                { icon: <Linkedin className="h-5 w-5" />, href: "#" },
+                { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/school/gietuniversitygunupur/posts/" },
                 { icon: <Youtube className="h-5 w-5" />, href: "#" },
               ].map((social, index) => (
                 <Link

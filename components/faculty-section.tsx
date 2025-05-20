@@ -1,8 +1,14 @@
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Linkedin, Mail } from "lucide-react"
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Linkedin, Mail } from "lucide-react";
 
 export default function FacultySection() {
   const facultyMembers = [
@@ -46,7 +52,7 @@ export default function FacultySection() {
       education: "PhD, GIET University",
       publications: 28,
     },
-  ]
+  ];
 
   return (
     <section id="faculty" className="py-16 bg-slate-50">
@@ -61,10 +67,18 @@ export default function FacultySection() {
         <Carousel className="w-full">
           <CarouselContent>
             {facultyMembers.map((faculty, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-2">
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/3 p-2"
+              >
                 <Card className="overflow-hidden h-full">
                   <div className="aspect-square relative">
-                    <Image src={faculty.image || "/placeholder.svg"} alt={faculty.name} fill className="object-cover" />
+                    <Image
+                      src={faculty.image || "/placeholder.svg"}
+                      alt={faculty.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold">{faculty.name}</h3>
@@ -72,13 +86,16 @@ export default function FacultySection() {
 
                     <div className="space-y-2 text-sm mb-4">
                       <p>
-                        <span className="font-medium">Specialization:</span> {faculty.specialization}
+                        <span className="font-medium">Specialization:</span>{" "}
+                        {faculty.specialization}
                       </p>
                       <p>
-                        <span className="font-medium">Education:</span> {faculty.education}
+                        <span className="font-medium">Education:</span>{" "}
+                        {faculty.education}
                       </p>
                       <p>
-                        <span className="font-medium">Publications:</span> {faculty.publications}
+                        <span className="font-medium">Publications:</span>{" "}
+                        {faculty.publications}
                       </p>
                     </div>
 
@@ -100,9 +117,11 @@ export default function FacultySection() {
         </Carousel>
 
         <div className="mt-8 text-center">
-          <Button>View All Faculty Members</Button>
+          <Button asChild>
+            <a href="/faculty">View All Faculty Members</a>
+          </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
