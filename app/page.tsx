@@ -100,7 +100,9 @@ export default function Home() {
               variant="outline"
               className="bg-white text-slate-900 hover:bg-slate-100"
             >
-              Download Brochure
+              <a href="/pdf/digital-brochure.pdf" target="_blank" rel="noopener noreferrer">
+                Download Brochure
+              </a>
             </Button>
           </div>
         </div>
