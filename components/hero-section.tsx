@@ -4,16 +4,20 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[80vh] min-h-[600px] flex items-center pt-16">
+    <section className="relative h-[100vh] min-h-[700px] flex items-center pt-16">
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/view.jpg?height=1080&width=1920"
-          alt="University campus"
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/main-banner-optimized.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Content */}

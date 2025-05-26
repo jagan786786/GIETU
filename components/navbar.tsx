@@ -12,7 +12,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import ApplyNowFormModal from "./ApplyNowFormModal";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -43,7 +42,6 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,17 +114,17 @@ export default function Navbar() {
               )}
             </nav>
 
-            {/* Desktop Buttons */}
+            {/* Desktop Apply Now Button */}
             <div className="hidden lg:flex items-center space-x-4">
               <Button
-                onClick={() => setShowForm(true)}
+                asChild
                 className={cn(
                   scrolled
                     ? "bg-slate-800 text-white hover:bg-slate-900"
                     : "bg-white text-slate-900 hover:bg-slate-100"
                 )}
               >
-                Apply Now
+                <Link href="/apply">Apply Now</Link>
               </Button>
             </div>
 
@@ -192,22 +190,17 @@ export default function Navbar() {
               </nav>
               <div className="mt-4 px-4 pt-4 flex flex-col space-y-2 border-t border-slate-200">
                 <Button
+                  asChild
                   className="w-full justify-center"
-                  onClick={() => {
-                    setIsOpen(false);
-                    setShowForm(true);
-                  }}
+                  onClick={() => setIsOpen(false)}
                 >
-                  Apply Now
+                  <Link href="/apply">Apply Now</Link>
                 </Button>
               </div>
             </div>
           )}
         </div>
       </header>
-
-      {/* Apply Now Modal */}
-      <ApplyNowFormModal isOpen={showForm} onClose={() => setShowForm(false)} />
     </>
   );
 }
